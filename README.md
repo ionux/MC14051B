@@ -90,8 +90,8 @@ void loop ()
 
 void reset()
 {
-  digitalWrite(7, HIGH);
+  digitalWrite(controlPin, HIGH);
   delay(10);
-  digitalWrite(7, LOW);
+  digitalWrite(controlPin, LOW);
 }
 ```
