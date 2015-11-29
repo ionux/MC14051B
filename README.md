@@ -34,8 +34,23 @@ This example reads in values from an analogue sensor connected to the MC14051B p
 
 ### With the library
 
+```
+#include <MC14051B.h>
+#include "Wire.h"
 
+int ABCpins[] = {8, 9, 10};
+MC14051B expander(7, ABCpins, A0);
 
+void setup ()
+{
+  Serial.begin(9600);
+}
 
+void loop ()
+{
+  Serial.println(expander.mcAnalogRead(3));
+  expander.reset();
+}
+```
 
 ### Without the library
