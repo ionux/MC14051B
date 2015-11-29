@@ -4,7 +4,7 @@
 
 The [M14051b](http://www.onsemi.com/pub_link/Collateral/MC14051B-D.PDF) is a popular and cheap anlogue multiplexer that can be used to add 8 more analogue ports to your Arduino.
 
-However, writing reading and writing to the MC14051B's ports makes sketches long and tedious, hence this dirver.
+However, writing reading and writing to the MC14051B's ports makes sketches long and tedious, hence this driver.
 
 ## Modules
 
@@ -54,3 +54,44 @@ void loop ()
 ```
 
 ### Without the library
+
+```
+#include "Wire.h"
+
+int controlPin=7;
+int A=8;
+int B=9;
+int C=10;
+int X=A0;
+
+void setup ()
+{
+
+  pinMode(controlPin, OUTPUT);
+  pinMode(A, OUTPUT);
+  pinMode(B, OUTPUT);
+  pinMode(C, OUTPUT);
+  pinMode(X, INPUT);
+  
+  Serial.begin(9600);
+}
+
+void loop ()
+{
+  digitalWrite(A, 1);
+  digitalWrite(B, 1);
+  digitalWrite(C, 0);
+
+  Serial.println(analogRead(X));
+  
+  reset();
+}
+
+
+void reset()
+{
+  digitalWrite(7, HIGH);
+  delay(10);
+  digitalWrite(7, LOW);
+}
+```
