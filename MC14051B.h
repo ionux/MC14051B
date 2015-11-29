@@ -23,7 +23,7 @@ along with this program. If not, see http://www.gnu.org/licenses/.
 class MC14051B
 {
   public:
-      MC14051B(int controlPin, int ABCPin[2], int X);
+      MC14051B(int controlPin, int ABCPin[3], int X);
       ~MC14051B();
       void reset();
       int mcAnalogRead(char pin);

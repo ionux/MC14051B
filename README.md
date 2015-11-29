@@ -8,14 +8,34 @@ However, writing reading and writing to the MC14051B's ports makes sketches long
 
 ## Modules
 
-### MC14051B(int controlPin, int ABCPin[2], int X);
+### MC14051B(int controlPin, int ABCPin[3], int X)
 
 The constructor takes 3 parameters:
 
 1. `controlPin` the Arduino's pin number you connect to the MC14051B's inhibitor.
+2. `ABCPin` is three item array that contains the Arduino pin numbers for MC14051B's A, B, & C ports.
+3. `X` is the Arduino analogue pin connected to the MC14051B X (I/O) pin.
+
+### mcAnalogRead(char pin)
+
+Returns the analogue input from one of the MC14051B's ports. You set which port you want to read from with the `pin` parameter shown above, where `0` reads from port `X0`, `1` reads from port `X1`, `2` reads from port `X2`, and so on.
+
+### mcAnalogWrite(char pin, int value)
+
+Is the same as `mcAnalogRead()` shown above, except that it pushes a number (`value`) to the MC14051B `pin`you want to write to.
+
+### reset()
+
+Resets the MC14051B.      
+
+## Example
+
+This example reads in values from an analogue sensor connected to the MC14051B port 3:
+
+### With the library
 
 
 
-      void reset();
-      int mcAnalogRead(char pin);
-      void mcAnalogWrite(char pin, int value);
+
+
+### Without the library
