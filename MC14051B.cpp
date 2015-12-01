@@ -16,7 +16,6 @@ along with this program. If not, see http://www.gnu.org/licenses/.
 */
 
 #include "Arduino.h"
-#include "Wire.h"
 #include "MC14051B.h"
 
 MC14051B::MC14051B(int controlPin, int ABCPin[3], int X)
