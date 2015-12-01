@@ -25,9 +25,9 @@ class MC14051B
   public:
       MC14051B(int controlPin, int ABCPin[3], int X);
       ~MC14051B();
-      void reset();
       int mcAnalogRead(char pin);
       void mcAnalogWrite(char pin, int value);
+      void reset();
     
   private:
       int _ABC[3];      //The pins on the Arduino that decide what port you read from or write to
