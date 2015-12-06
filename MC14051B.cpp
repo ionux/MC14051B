@@ -38,8 +38,7 @@ void MC14051B::setABCPin(char pin)
     
     for (i=0; i<3; i++)
     {
-        digitalWrite(_ABC[i], pin%2);
-        pin=pin/2;
+        digitalWrite(_ABC[i], bitRead(pin, i));
     }
 }
 
