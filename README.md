@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The [M14051b](http://www.onsemi.com/pub_link/Collateral/MC14051B-D.PDF) is a popular and cheap anlogue multiplexer that can be used to add 8 more analogue ports to your Arduino.
+The [M14051b](http://www.onsemi.com/pub_link/Collateral/MC14051B-D.PDF) is a popular and cheap analogue multiplexer that can be used to add 8 more analogue ports to your Arduino.
 
 However, writing reading and writing to the MC14051B's ports makes sketches long and tedious, hence this driver.
 
